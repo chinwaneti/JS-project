@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=main, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+
+<body class="h-screen bg-[url('https://images.unsplash.com/photo-1631084854605-2ea7de264ebf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJpcnRoZGF5JTIwaW52aXRhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')] bg-cover ">
+    <main class=" text-center">
+        <h1 class="text-6xl animate-bounce mt-10  text-center font-extrabold ">BIRTHDAY COUNTDOWN</h1>
+        <div class="mt-[350px] flex justify-center space-x-20 ml-32">
+            <div class="flex flex-col">
+                <span id="days"> 30
+                </span>
+                <span>day</span>
+            </div>
+            <div class="flex flex-col">
+                <span id="hours">30
+                </span>
+                <span id="">hour</span>
+            </div>
+            <div class="flex flex-col">
+                <span id="minutes">30
+                </span>
+                <span>minute</span>
+            </div>
+            <div class="flex flex-col">
+                <span id="seconds">30
+                </span>
+                <span>second</span>
+            </div>
+            <div class="flex flex-col">
+                <span id="mili">30
+                </span>
+                <span>millisecond</span>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    const day = document.getElementById('days')
+    const hour = document.getElementById('hours')
+    const minute = document.getElementById('minutes')
+    const second = document.getElementById('seconds')
+    const milli = document.getElementById('mili')
+    const bday = new Date('July 14 2023 12:34:06').getTime()
+
+    function nxtByDay() {
+        const presentDate = new Date().getTime()
+        const difference = bday - presentDate
+
+        // const xmil =
+        const xs = 1000
+        const xm = xs * 60
+        const xh = xm * 60
+        const xd = xh * 24
+
+        const dy = Math.floor(difference / xd)
+        const hr = Math.floor((difference % xd) / xh)
+        const min = Math.floor((difference % xh) / xm)
+        const sec = Math.floor((difference % xm) / xs)
+
+        day.textContent = dy
+        hour.textContent = hr
+        minute.textContent = min
+            // seconds.textContent = sec
+        seconds.textContent = sec < 10 ? `0${sec}` : sec
+
+        setTimeout(() => nxtByDay(), 100)
+    }
+
+    nxtByDay()
+</script>
+
+</html>

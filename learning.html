@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>course</th>
+            <th>course code</th>
+            <th>Unit</th>
+            <th>Grade</th>
+            <th>Total Point</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Management Account</th>
+                <td><input type="text" id="code1"></td>
+                <td><input type="number" id="unit1"></td>
+                <td><input type="text" id="grade1"></td>
+                <td id="totalPoint1"></td>
+            </tr>
+            <tr>
+                <th>Financial Accounting</th>
+                <td><input type="text" id="code2"></td>
+                <td><input type="number" id="unit2"></td>
+                <td><input type="text" id="grade2"></td>
+                <td id="totalPoint2"></td>
+            </tr>
+            <tr>
+                <th>Financial Management</th>
+                <td><input type="text" id="code3"></td>
+                <td><input type="number" id="unit3"></td>
+                <td><input type="text" id="grade3"></td>
+                <td id="totalPoint3"></td>
+            </tr>
+            <tr>
+                <th>Auditing</th>
+                <td><input type="text" id="code4"></td>
+                <td><input type="number" id="unit4"></td>
+                <td><input type="text" id="grade4"></td>
+                <td id="totalPoint4"></td>
+            </tr>
+            <tr>
+                <th>Project</th>
+                <td><input type="text" id="code5"></td>
+                <td><input type="number" id="unit5"></td>
+                <td><input type="text" id="grade5"></td>
+                <td id="totalPoint5"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><button>calc GPA</button></td>
+                <td id="calGpa"></td>
+                <td id="totUnit"></td>
+                <td id="totPoint"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        const b = document.getElementById('unit1')
+        const ba = document.getElementById('unit2')
+        const bb = document.getElementById('unit3')
+        const bc = document.getElementById('unit4')
+        const bd = document.getElementById('unit5')
+
+        const c = document.getElementById('grade1')
+        const ca = document.getElementById('grade2')
+        const cb = document.getElementById('grade3')
+        const cc = document.getElementById('grade4')
+        const cd = document.getElementById('grade5')
+
+
+        const x1 = document.getElementById('totalPoint1')
+        const x2 = document.getElementById('totalPoint2')
+        const x3 = document.getElementById('totalPoint3')
+        const x4 = document.getElementById('totalPoint4')
+        const x5 = document.getElementById('totalPoint5')
+
+
+        const btn = document.querySelector('button')
+        const calGpa = document.getElementById('calGpa')
+        const totUnit = document.getElementById('totUnit')
+        const totPoint = document.getElementById('totPoint')
+
+
+        function gpa() {
+
+            const score1 = Number(unit1.value)
+            const score2 = Number(unit2.value)
+            const score3 = Number(unit3.value)
+            const score4 = Number(unit4.value)
+            const score5 = Number(unit5.value)
+
+
+
+            const grade1 = (c.value)
+            const grade2 = (ca.value)
+            const grade3 = (cb.value)
+            const grade4 = (cc.value)
+            const grade5 = (cd.value)
+
+
+            grade1 == 'A' ? x1.textContent = score1 * 4 : grade1 == 'B' ? x1.textContent = score1 * 3.75 : grade1 == 'C' ? x1.textContent = score1 * 3 : grade1 == 'D' ? x1.textContent = score1 * 2.75 : x1.textContent = score1 * 0
+            grade2 == 'A' ? x2.textContent = score2 * 4 : grade2 == 'B' ? x2.textContent = score2 * 3.75 : grade2 == 'C' ? x2.textContent = score2 * 3 : grade2 == 'D' ? x2.textContent = score2 * 2.75 : x2.textContent = score2 * 0
+            grade3 == 'A' ? x3.textContent = score3 * 4 : grade3 == 'B' ? x3.textContent = score3 * 3.75 : grade3 == 'C' ? x3.textContent = score3 * 3 : grade3 == 'D' ? x3.textContent = score3 * 2.75 : x3.textContent = score3 * 0
+            grade4 == 'A' ? x4.textContent = score4 * 4 : grade4 == 'B' ? x4.textContent = score4 * 3.75 : grade4 == 'C' ? x4.textContent = score4 * 3 : grade4 == 'D' ? x4.textContent = score4 * 2.75 : x4.textContent = score4 * 0
+            grade5 == 'A' ? x5.textContent = score5 * 4 : grade5 == 'B' ? x5.textContent = score5 * 3.75 : grade5 == 'C' ? x5.textContent = score5 * 3 : grade5 == 'D' ? x5.textContent = score5 * 2.75 : x5.textContent = score5 * 0
+
+
+            const totalPoint1 = Number(x1.textContent)
+            const totalPoint2 = Number(x2.textContent)
+            const totalPoint3 = Number(x3.textContent)
+            const totalPoint4 = Number(x4.textContent)
+            const totalPoint5 = Number(x5.textContent)
+
+            const totalPoints = totalPoint1 + totalPoint2 + totalPoint3 + totalPoint4 + totalPoint5
+
+            totalUnit = score5 + score4 + score3 + score2 + score1
+
+            calGpa.textContent = `Your GPA is ${(totalPoints / totalUnit).toFixed(4)}`
+
+
+
+            console.log(totalUnit)
+            console.log(totalPoints)
+            console.log(calGpa)
+
+
+
+
+        }
+        btn.addEventListener("click", gpa)
+    </script>
+</body>
+
+</html>

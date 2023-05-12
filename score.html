@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Score</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tbody>
+                <tr>
+                    <th>Literature</th>
+                    <td><input type="number" name="score" id="me"></td>
+                    <td id="sub"></td>
+                </tr>
+                <tr>
+                    <th>Maths</th>
+                    <td><input type="number" name="score" id="scr"></td>
+                    <td id="lit"></td>
+                </tr>
+                <tr>
+                    <th>French</th>
+                    <td><input type="number" name="score" id="mine"></td>
+                    <td id="mint"></td>
+                </tr>
+            </tbody>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><button>check average</button></td>
+                <td id="avg"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        const a = document.getElementById('me')
+        const b = document.getElementById('scr')
+        const c = document.getElementById('mine')
+
+
+        const ab = document.getElementById('sub')
+        const bc = document.getElementById('lit')
+        const cd = document.getElementById('mint')
+
+
+        const avg = document.getElementById('avg')
+        const btn = document.querySelector('button')
+
+        function score() {
+            const score1 = Number(me.value)
+            const score2 = Number(scr.value)
+            const score3 = Number(mine.value)
+            const total = score1 + score2 + score3
+
+            score1 >= 75 ? ab.textContent = "A" : score1 >= 60 ? ab.textContent = 'B' : score1 >= 50 ? ab.textContent = 'C' : ab.textContent = 'F'
+            score2 >= 75 ? bc.textContent = "A" : score2 >= 60 ? bc.textCont = "B" : score2 >= 50 ? bc.textContent = 'C' : bc.textContent = 'F'
+            score3 >= 75 ? bc.textContent = "A" : score3 >= 60 ? cd.textCont = "B" : score2 >= 50 ? cd.textContent = 'C' : cd.textContent = 'F'
+
+            avg.textContent = (total / 3).toFixed(2)
+        }
+        btn.addEventListener('click', score)
+    </script>
+</body>
+
+</html>

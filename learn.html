@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="preview">
+
+    </section>
+    <button id="btn"> add</button>
+</body>
+<script>
+    const lists = document.createElement('ul')
+
+    // for (let foodStuff of foodStuffs) {
+    //     const lists = document.createElement('li')
+    //     list.append(lists)
+    //     lists.textContent = foodStuff
+
+    // }
+    const button = document.getElementById("btn")
+
+    function addFruit() {
+        const myArray = []
+        const mine = prompt('add another fruit')
+        myArray.push(mine)
+
+        for (let my of myArray) {
+            const list = document.createElement('li')
+            lists.append(list)
+            return list.textContent = myArray
+        }
+    }
+
+
+    button.addEventListener('click', addFruit)
+
+
+    const section = document.querySelector('section')
+    section.appendChild(lists)
+</script>
+
+</html>

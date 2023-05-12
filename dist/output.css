@@ -663,12 +663,24 @@ video {
   clear: none;
 }
 
+.ml-32 {
+  margin-left: 8rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
 
 .mt-52 {
   margin-top: 13rem;
+}
+
+.mt-\[350px\] {
+  margin-top: 350px;
 }
 
 .box-border {
@@ -774,6 +786,10 @@ video {
   height: 100px;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .w-\[400px\] {
   width: 400px;
 }
@@ -836,6 +852,22 @@ video {
 
 .transform-none {
   transform: none;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
 }
 
 .touch-auto {
@@ -1300,6 +1332,12 @@ video {
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-20 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(5rem * var(--tw-space-x-reverse));
+  margin-left: calc(5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 1;
 }
@@ -1727,6 +1765,10 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-\[url\(\'https\:\/\/images\.unsplash\.com\/photo-1631084854605-2ea7de264ebf\?ixlib\=rb-4\.0\.3\&ixid\=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJpcnRoZGF5JTIwaW52aXRhdGlvbnxlbnwwfHwwfHw\%3D\&auto\=format\&fit\=crop\&w\=500\&q\=60\'\)\] {
+  background-image: url('https://images.unsplash.com/photo-1631084854605-2ea7de264ebf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJpcnRoZGF5JTIwaW52aXRhdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60');
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1764,6 +1806,10 @@ video {
 .box-decoration-clone {
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
+}
+
+.bg-cover {
+  background-size: cover;
 }
 
 .bg-fixed {
@@ -1921,8 +1967,17 @@ video {
   line-height: 1;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .font-bold {
   font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
 }
 
 .uppercase {
