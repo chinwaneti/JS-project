@@ -5,49 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GPA_Calculator</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    
 </head>
 
-<body>
-    <table>
-        <thead>
+<body class="bg-slate-950 h-screen">
+    
+    <section class="text-white">
+        <div class="py-5"><h1 class="text-4xl font-bold hover:text-slate-300 text-center mt-12 ">
+            GPA CALCULATOR
+        </h1>
+        <p class="text-center mt-3 hover:text-slate-300">calculate your semester GPA anc check how much you need next semester to cross that legendary GPA mark
+    </p></div>
+        
+    </section>
+    <table class="bg-slate-400 mt-10 ml-60 mb-10 h-[60vh] ">
+        <thead class="text-xl">
             <th>course</th>
             <th>course code</th>
             <th>Unit</th>
             <th>Grade</th>
             <th>Total Point</th>
         </thead>
-        <tbody>
-            <tr>
-                <th>Management Account</th>
+        <tbody class="">
+            <tr class="border-3 border-cyan-950">
+                <th class=" text-left ">Management Account</th>
                 <td><input type="text" id="code1"></td>
                 <td><input type="number" id="unit1"></td>
                 <td><input type="text" id="grade1"></td>
                 <td id="totalPoint1"></td>
             </tr>
             <tr>
-                <th>Financial Accounting</th>
+                <th class="text-left">Financial Accounting</th>
                 <td><input type="text" id="code2"></td>
                 <td><input type="number" id="unit2"></td>
                 <td><input type="text" id="grade2"></td>
                 <td id="totalPoint2"></td>
             </tr>
             <tr>
-                <th>Financial Management</th>
+                <th class="text-left">Financial Management</th>
                 <td><input type="text" id="code3"></td>
                 <td><input type="number" id="unit3"></td>
                 <td><input type="text" id="grade3"></td>
                 <td id="totalPoint3"></td>
             </tr>
             <tr>
-                <th>Auditing</th>
+                <th class="text-left">Auditing</th>
                 <td><input type="text" id="code4"></td>
                 <td><input type="number" id="unit4"></td>
                 <td><input type="text" id="grade4"></td>
                 <td id="totalPoint4"></td>
             </tr>
             <tr>
-                <th>Project</th>
+                <th class="text-left">Project</th>
                 <td><input type="text" id="code5"></td>
                 <td><input type="number" id="unit5"></td>
                 <td><input type="text" id="grade5"></td>
@@ -56,10 +67,8 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="2"><button>calc GPA</button></td>
+                <td class=" rounded-full text-white text-center font-bold w-3 bg-black"><button>calc GPA</button></td>
                 <td id="calGpa"></td>
-                <td id="totUnit"></td>
-                <td id="totPoint"></td>
             </tr>
         </tfoot>
     </table>
@@ -86,8 +95,6 @@
 
         const btn = document.querySelector('button')
         const calGpa = document.getElementById('calGpa')
-        const totUnit = document.getElementById('totUnit')
-        const totPoint = document.getElementById('totPoint')
 
 
         function gpa() {
@@ -120,17 +127,14 @@
             const totalPoint4 = Number(x4.textContent)
             const totalPoint5 = Number(x5.textContent)
 
-            const totalPoints = totalPoint1 + totalPoint2 + totalPoint3 + totalPoint4 + totalPoint5
 
+            totalPoints = totalPoint1 + totalPoint2 + totalPoint3 + totalPoint4 + totalPoint5
             totalUnit = score5 + score4 + score3 + score2 + score1
 
             calGpa.textContent = `Your GPA is ${(totalPoints / totalUnit).toFixed(4)}`
 
 
 
-            console.log(totalUnit)
-            console.log(totalPoints)
-            console.log(calGpa)
 
 
 
